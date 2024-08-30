@@ -18,20 +18,23 @@ Este proyecto es una aplicación web que utiliza un modelo de aprendizaje profun
    cd tu-repositorio
 
 ## Crea un entorno virtual 
-
+```
 python -m venv venv
 source venv/bin/activate  # Para Linux/Mac
 venv\Scripts\activate  # Para Windows
-
+```
 ## Instalar dependencias
+```
 pip install -r requirements.txt
-
+```
 ## Ejecutar el Servidor de Flask
+```
 python app.py
-
+```
 ## Estructura del Proyecto
+![Estructura del Proyecto](/data/images/estructura.PNG)
 
-## Ventajas de esta Estructura
+### Ventajas de esta Estructura
 * Modularidad: Separa el código en módulos y carpetas organizadas por funcionalidad, lo que facilita encontrar y modificar partes específicas del proyecto.
 * Mantenibilidad: Un proyecto bien estructurado es más fácil de mantener, especialmente cuando crece en tamaño y complejidad.
 * Escalabilidad: Facilita la adición de nuevas funcionalidades o componentes sin desordenar el código existente.
