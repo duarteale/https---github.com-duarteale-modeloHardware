@@ -1,33 +1,37 @@
 function uploadImage() {
       const fileInput = document.getElementById('image-upload');
       const file = fileInput.files[0];
+      
       if (!file) {
-            alert('Por favor, seleccione una imagen.');
+            alert('Por favor, selecciona un archivo de imagen.');
             return;
-      }
-      const formData = new FormData();
-      formData.append('file', file);
-  
-      fetch('/predict', {
+            }
+            
+            const formData = new FormData();
+            formData.append('file', file);
+      
+            // Mostrar vista previa
+            const preview = document.getElementById('image-preview');
+            const reader = new FileReader();
+            
+            reader.onload = function(e) {
+            preview.src = e.target.result;
+            preview.style.display = 'block'; // Mostrar la imagen
+            };
+      
+            reader.readAsDataURL(file);
+      
+            // Enviar la imagen al servidor
+            fetch('/predict', {
             method: 'POST',
             body: formData
-      })
-      .then(response => response.json())
-      .then(data => {
-            // Mostrar el resultado de la predicción
-            document.getElementById('result').textContent = `El componente es: ${data.prediction}`;
-            
-            // Mostrar información adicional del hardware
-            if (data.info && !data.info.error) {
-                  document.getElementById('hardware-info').textContent = 
-                        `Información adicional: ${JSON.stringify(data.info)}`;
-            } else {
-                  document.getElementById('hardware-info').textContent = 
-                        `Error al obtener información adicional: ${data.info.error}`;
-            }
-      })
-      .catch(error => {
+            })
+            .then(response => response.json())
+            .then(data => {
+            document.getElementById('result').textContent
+                  = `El componente es: ${data.prediction}`;
+            })
+            .catch(error => {
             console.error('Error:', error);
-            document.getElementById('result').textContent = 'Error al realizar la predicción.';
-      });
-}
+            });
+      }

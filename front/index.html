@@ -11,12 +11,11 @@
       <h1>Clasificador de Hardware</h1>
       <input type="file" id="image-upload" accept="image/*">
       <button onclick="uploadImage()">Subir Imagen</button>
-
-      <!-- Contenedor para mostrar resultados -->
+      <div id="preview-container">
+            <img id="image-preview" alt="Vista previa de la imagen" style="display: none; max-width: 100%;" />
+      </div>
       <div id="result"></div>
-      <div id="hardware-info"></div>
 
-      <!-- Archivo JS -->
       <script src="/front/main.js"></script>
 </body>
 
