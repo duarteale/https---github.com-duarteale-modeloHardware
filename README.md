@@ -13,12 +13,12 @@ Este proyecto es una aplicación web que utiliza un modelo de aprendizaje profun
 ## Instalación
 
 1. **Clona este repositorio:**
-
    ```bash
    git clone https://github.com/duarteale/modeloHardware.git
    cd tu-repositorio
 
 ## Crea un entorno virtual 
+
 python -m venv venv
 source venv/bin/activate  # Para Linux/Mac
 venv\Scripts\activate  # Para Windows
@@ -31,20 +31,20 @@ python app.py
 
 ## Estructura del Proyecto
 
-# Ventajas de esta Estructura
+## Ventajas de esta Estructura
 * Modularidad: Separa el código en módulos y carpetas organizadas por funcionalidad, lo que facilita encontrar y modificar partes específicas del proyecto.
 * Mantenibilidad: Un proyecto bien estructurado es más fácil de mantener, especialmente cuando crece en tamaño y complejidad.
 * Escalabilidad: Facilita la adición de nuevas funcionalidades o componentes sin desordenar el código existente.
 * Colaboración: Hace que el proyecto sea más comprensible y navegable para otros desarrolladores que puedan unirse al proyecto.
 
 ## Probar la Aplicación
-# Abrir el Frontend:
+### Abrir el Frontend:
 Abre el archivo index.html en tu navegador web.
 
-# Cargar una Imagen:
+### Cargar una Imagen:
 Selecciona una imagen de hardware utilizando el campo de entrada de archivo.
 
-# Haz clic en el botón "Subir Imagen".
+### Haz clic en el botón "Subir Imagen".
 Ver Resultados:
 
 La página mostrará el nombre del hardware identificado por el modelo.
